@@ -8,8 +8,24 @@ class App extends Component {
     super();
 
     this.state = {
-      name: { firstName:"Mauro", lastName: "Gomez" },
-      company: "Google"
+      monsters: [
+        
+        {
+          name: "Linda"
+        },
+  
+        {
+          name: "Frank"
+        },
+  
+        {
+          name: "Jacky"
+        },
+        {
+          name: "Andrei"
+        }
+      ]
+      
     };
   }
 
@@ -18,16 +34,11 @@ class App extends Component {
     return (
       <>
         <div className='App'>
-          <header className='app-header'>
-            <img src={reactLogo} alt="logo-react" />
-            <p>Hi I am {this.state.name.firstName} {this.state.name.lastName}, I work at {this.state.company}.</p>
-            <button onClick={() => {
-              this.setState({ 
-                name: {firstName: "Matias", lastName:"Gonzales" } })
-            }}
-            >
-            Change name!</button>
-          </header>
+          {
+            this.state.monsters.map((monster) => {
+              return <h1>{monster.name}</h1>;
+            })
+          }
         </div>
       </>
     );
