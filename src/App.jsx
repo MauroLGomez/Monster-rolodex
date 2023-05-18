@@ -51,11 +51,6 @@ this.setState(() => {
     return (
       <>
         <div className='App'>
-          <input className='search-box' 
-            type='search' 
-            placeholder='Search monsters' 
-            onChange={ onSearchChange } 
-          />
           {
             filteredMonsters.map((monster) => {
               return ( 
